@@ -31,7 +31,6 @@ six==1.7.3
 TBB==0.1
 TTFQuery==1.0.5
 tweepy==3.2.0
-twilio==5.6.0
 virtualenv==15.1.0
 virtualenv-clone==0.2.6
 VPython==6.11
