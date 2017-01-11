@@ -4,7 +4,7 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, request, redirect
-import twilio.twiml
+#import twilio.twiml
 from FlaskWebProject1 import app
 
 
@@ -26,9 +26,9 @@ def home():
 def contact():
     """Renders the contact page."""
 
-    resp = twilio.twiml.Response()
-    resp.message("Hello, World!")
-
+    #resp = twilio.twiml.Response()
+    #resp.message("Hello, World!")
+    resp = "Hello, Shashank"
     return render_template(
         'contact.html',
         title='Contact',
