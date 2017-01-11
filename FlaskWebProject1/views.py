@@ -3,17 +3,24 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template, request, redirect
+import twilio.twiml
 from FlaskWebProject1 import app
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/home')
 def home():
     """Renders the home page."""
+    """Respond to incoming calls with a simple text message."""
+
+    resp = twilio.twiml.Response()
+    resp.message("Hello, World!")
+
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
+        response = str(resp)
     )
 
 @app.route('/contact')
