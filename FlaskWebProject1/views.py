@@ -7,30 +7,34 @@ from flask import render_template, request, redirect
 import twilio.twiml
 from FlaskWebProject1 import app
 
-@app.route('/', methods=['GET', 'POST'])
+
 @app.route('/home')
 def home():
     """Renders the home page."""
     """Respond to incoming calls with a simple text message."""
 
-    resp = twilio.twiml.Response()
-    resp.message("Hello, World!")
+    
 
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
-        response = str(resp)
     )
-
-@app.route('/contact')
+    
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     """Renders the contact page."""
+
+    resp = twilio.twiml.Response()
+    resp.message("Hello, World!")
+
     return render_template(
         'contact.html',
         title='Contact',
         year=datetime.now().year,
-        message='Your contact page.'
+        message='Your contact page.',
+        response = str(resp)
     )
 
 @app.route('/about')
