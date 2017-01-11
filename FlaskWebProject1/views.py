@@ -4,8 +4,7 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template
-from FlaskWebProject1 import app
-import twilio.twiml
+from FlaskWebProject1 import app, twiml
 
 @app.route('/')
 @app.route('/home')
