@@ -32,6 +32,7 @@ TBB==0.1
 TTFQuery==1.0.5
 tweepy==3.2.0
 twilio==5.6.0
+twilio-3.6.6-py27-none-any.whl
 virtualenv==15.1.0
 virtualenv-clone==0.2.6
 VPython==6.11
