@@ -12,6 +12,7 @@ azure-servicebus==0.20.1
 azure-servicemanagement-legacy==0.20.2
 azure-storage==0.20.3
 click==6.7
+cython>1
 Django==1.10.5
 Flask==0.12
 FontTools==2.4
@@ -27,6 +28,7 @@ python-dateutil==2.6.0
 pytz==2016.10
 requests==2.4.3
 requests-oauthlib==0.4.1
+scipy>1
 six==1.7.3
 TBB==0.1
 TTFQuery==1.0.5
