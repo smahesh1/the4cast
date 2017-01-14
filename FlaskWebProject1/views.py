@@ -13,7 +13,6 @@ import requests
 @app.route('/home', methods=["POST"])
 def home():
     resp = requests.post("https://api.twilio.com/2010-04-01/Accounts/ACe6dfc70070586ef00b1c5a39c6040522/Messages.json", data={"To":"+19707655549","From":"+19709646126","Body":"Hi!"},auth=("ACe6dfc70070586ef00b1c5a39c6040522","2f49cbdc4d91e523accf22158ca269d2"))
-    input_json = request.get_
     """Renders the home page."""
     return render_template(
         'index.html',
