@@ -40,3 +40,4 @@ Werkzeug==0.11.15
 wheel==0.29.0
 wxPython==3.0.0.0
 wxPython-common==3.0.0.0
+numpy-1.11.3+mkl-cp27-cp27m-win32.whl
