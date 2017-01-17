@@ -9,7 +9,7 @@ D:\home\site\wwwroot\env\Scripts>python.exe -m pip install --upgrade -r D:\home\
 """
 
 from datetime import datetime
-from flask import render_template, url_for
+from flask import render_template
 from FlaskWebProject1 import app
 import sys
 sys.path.append("c:/python")
@@ -22,22 +22,11 @@ ACCOUNT_SID = "ACe6dfc70070586ef00b1c5a39c6040522"
 AUTH_TOKEN = "2f49cbdc4d91e523accf22158ca269d2" 
 
 @app.route('/')
-@app.route('/index', methods=["POST"])
-def index():
+@app.route('/home', methods=["POST"])
+def home():
     # This uses the REST API to send an http request
     #resp = requests.post("https://api.twilio.com/2010-04-01/Accounts/ACe6dfc70070586ef00b1c5a39c6040522/Messages.json", data={"To":"+19707655549","From":"+19709646126","Body":"Hi!"},auth=("ACe6dfc70070586ef00b1c5a39c6040522","2f49cbdc4d91e523accf22158ca269d2"))
     
-   
-
-    """Renders the home page."""
-    return render_template(
-        'index.html'
-    )
-
-@app.route('/team')
-def team():
-    """Renders the contact page."""
-
     client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
  
     client.messages.create(
@@ -47,22 +36,29 @@ def team():
         media_url="https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg", 
     )
 
+    """Renders the home page."""
     return render_template(
-        'team.html'
+        'index.html',
+        title='Home Page',
+        year=datetime.now().year,
+    )
+
+@app.route('/contact')
+def contact():
+    """Renders the contact page."""
+    return render_template(
+        'contact.html',
+        title='Contact',
+        year=datetime.now().year,
+        message='Your contact page.'
     )
 
 @app.route('/about')
 def about():
     """Renders the about page."""
     return render_template(
-        'about.html'
-        
-    )
-
-@app.route('/services')
-def services():
-    """Renders the about page."""
-    return render_template(
-        'services.html'
-        
+        'about.html',
+        title='About',
+        year=datetime.now().year,
+        message='Your application description page.'
     )
